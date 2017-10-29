@@ -5,6 +5,7 @@
     <app-third></app-third>
     <app-fourth></app-fourth>
     <app-fifth></app-fifth>
+    <app-sixth></app-sixth>
   </main>
 </template>
 
@@ -14,6 +15,7 @@ import second from './secondSection'
 import third from './thirdSection'
 import fourth from './fourthSection'
 import fifth from './fifthSection'
+import sixth from './sixthSection'
 
   export default {
     components: {
@@ -22,6 +24,7 @@ import fifth from './fifthSection'
       'app-third': third,
       'app-fourth': fourth,
       'app-fifth': fifth,
+      'app-sixth': sixth,
     },
   }
 </script>

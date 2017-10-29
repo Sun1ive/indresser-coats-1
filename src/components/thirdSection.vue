@@ -20,11 +20,10 @@
           <h3>Пальто inDresser</h3>
           <p>{{ item.title }}</p>
           <div class="border"></div>
-          <div class="price">{{ item.price }}</div>
+          <div class="price">{{ item.price }} ГРН</div>
           <button class="buyButton">Купить</button>
           <div class="quantity">осталось {{ item.quantity }}шт</div>
         </div>
-      </v-flex>
       </v-flex>
     </v-layout>
   </v-container>
@@ -60,6 +59,8 @@
 </script>
 
 <style scoped lang="stylus">
+@import '../stylus/card.styl'
+
 .third
   min-height 850px
   background-color rgb(240,240,240)
@@ -77,54 +78,4 @@
       margin 0 1rem
       position relative
 
-.box
-  display flex
-  flex-direction column
-  align-items center
-  justify-content center
-  background-color #fff
-  border 1px solid rgba(#c0c0c0, .4)
-  border-radius 8px
-  margin 1rem
-  img
-    max-width 200px
-    max-height 200px
-    margin 2rem 0
-  h3
-    font-size 2rem
-    line-height 2rem
-    text-align center
-    font-weight bold
-  p
-    width 80%
-    text-align center
-    margin 1rem auto
-    font-weight bold
-  .border
-    width 20%
-    margin 0 auto
-  .price
-    text-align center
-    color red
-    margin 1rem 0
-    font-weight bold
-  .buyButton
-    background-color red
-    border-radius 7px
-    padding 0.3rem 1rem
-    color #fff
-    display block
-    margin 0 auto
-  .quantity
-    color #c0c0c0
-    margin 1rem auto
-    text-align center
-
-
-
-.border
-  height 1px
-  width 100%
-  background-color #333
-  opacity .3
 </style>
