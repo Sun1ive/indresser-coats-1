@@ -45,7 +45,7 @@
       color #fff
       font-size 1rem
       width 80%
-      margin 0 auto
+      margin 1.2rem auto
   
   .border
     width 25%
