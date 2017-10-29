@@ -1,15 +1,10 @@
 <template>
   <main>
-    <section class="fisrt">
-      <app-first></app-first>
-    </section>
-      <app-second></app-second>
-    <section class="third">
-      <app-third></app-third>
-    </section>
-    <section>
-      <app-fourth></app-fourth>
-    </section>
+    <app-first></app-first>
+    <app-second></app-second>
+    <app-third></app-third>
+    <app-fourth></app-fourth>
+    <app-fifth></app-fifth>
   </main>
 </template>
 
@@ -18,6 +13,7 @@ import first from './firstSection'
 import second from './secondSection'
 import third from './thirdSection'
 import fourth from './fourthSection'
+import fifth from './fifthSection'
 
   export default {
     components: {
@@ -25,6 +21,7 @@ import fourth from './fourthSection'
       'app-second': second,
       'app-third': third,
       'app-fourth': fourth,
+      'app-fifth': fifth,
     },
   }
 </script>

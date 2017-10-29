@@ -4,7 +4,7 @@
       <h2 class="head">Подробности</h2>
       <div class="text">О пальто inDresser оверсайз со спущенным рукавом</div>
     </v-layout>
-    <v-layout column align-center justify-center>
+    <v-layout column align-center justify-center class="my-3">
       <div class="colors">Цвета</div>
       <ul>
         <li>
@@ -21,7 +21,7 @@
         </li>
       </ul>
     </v-layout>
-    <v-layout column align-center justify-center>
+    <v-layout column align-center justify-center class="my-3">
       <div class="composition">Состав</div>
       <v-layout row>
         <div class="comp" v-for="(item, i) in comp" :key="i">
@@ -30,7 +30,7 @@
         </div>
       </v-layout>
     </v-layout>
-    <v-layout style="min-height: 350px" align-end>
+    <v-layout style="min-height: 250px" align-end>
       <v-flex xs12 class="brownBG">
         <div>
           <img src="/public/img/p5.png" alt="coat">
@@ -69,7 +69,7 @@
   background-image url('/public/img/block3.jpg')
   background-size cover
   background-repeat no-repeat
-  height 900px
+  height 890px
   .text
     font-size 2.5rem
   .colors
