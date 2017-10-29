@@ -3,6 +3,8 @@
     <app-header></app-header>
     <app-main></app-main>
     <app-footer></app-footer>
+
+    <app-scrollTop></app-scrollTop>
   </v-app>
 </template>
 
@@ -10,6 +12,7 @@
 import header from './components/header'
 import main from './components/main'
 import footer from './components/footer'
+import scrollTop from './components/widgets/scrollTop'
 
 
   export default {
@@ -17,6 +20,7 @@ import footer from './components/footer'
       'app-header': header,
       'app-main': main,
       'app-footer': footer,
+      'app-scrollTop': scrollTop,
     },
     data () {
       return {

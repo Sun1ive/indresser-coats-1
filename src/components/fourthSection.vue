@@ -95,6 +95,26 @@
     .name
       font-size 1.2rem
 
+.colors
+.composition
+  position relative
+  &:before
+    content ''
+    position absolute
+    border 1px solid #c0c0c0
+    width 250px
+    top 50%
+    right 100%
+    margin-right 1rem
+  &:after
+    content ''
+    position absolute
+    border 1px solid #c0c0c0
+    width 250px
+    top 50%
+    left 100%
+    margin-left 1rem
+
 .brownBG
   background-color #A14F26
   min-height 150px

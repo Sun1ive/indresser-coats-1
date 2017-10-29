@@ -23,6 +23,7 @@
   .arrow
     min-width 40px
     min-height 40px
+    animation go linear alternate 2s infinite
     &:after
       content '\2193'
       position absolute
@@ -30,4 +31,12 @@
       left 50%
       transform translate(-50%, 0%)
       font-size 3rem
+  
+@keyframes go {
+  from {
+    transform translateY(-5px)
+  } to {
+    transform translateY(5px)
+  }
+}
 </style>
