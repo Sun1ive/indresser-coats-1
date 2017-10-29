@@ -13,7 +13,7 @@
           <div class="border"></div>
           <div class="price">{{ item.price }} ГРН</div>
           <button class="buyButton">Купить</button>
-          <div class="quantity">осталось {{ item.quantity }}шт</div>
+          <!-- <div class="quantity">осталось {{ item.quantity }}шт</div> -->
         </div>
       </v-flex>
     </v-layout>
@@ -43,6 +43,7 @@
 .sixth
   background-image url('/public/img/block4.jpg')
   background-size cover
+  min-height 830px
   p
     font-size 1.3rem
 </style>

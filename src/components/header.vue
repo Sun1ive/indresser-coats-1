@@ -21,9 +21,23 @@
           <p class="mb-0">В этом году холода наступили так быстро, что многие неуспели к ним хорошенько подготовиться. А теперь уже вроде бы поздно. Все хорошие вещи скупили, выходить из дома не хочется, а мороз все ближе. Но есть одно любопытное решение. Какое?</p>
         </v-flex>
       </v-layout>
+      <arrow>
+        Ответ ниже
+      </arrow>
     </v-container>
   </header>
 </template>
+
+
+<script>
+import arrow from './widgets/arrow'
+
+  export default {
+    components: {
+      arrow,
+    },
+  }
+</script>
 
 <style scoped lang="stylus">
 .header
@@ -31,6 +45,7 @@
   background-size cover
   background-repeat no-repeat
   height 735px
+  position relative
   .menu
     display flex
     li

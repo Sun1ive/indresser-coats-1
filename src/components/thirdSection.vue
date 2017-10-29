@@ -22,15 +22,21 @@
           <div class="border"></div>
           <div class="price">{{ item.price }} ГРН</div>
           <button class="buyButton">Купить</button>
-          <div class="quantity">осталось {{ item.quantity }}шт</div>
+          <!-- <div class="quantity">осталось {{ item.quantity }}шт</div> -->
         </div>
       </v-flex>
     </v-layout>
+    <arrow>Больше информации</arrow>
   </v-container>
 </template>
 
 <script>
+import arrow from './widgets/arrow'
+
   export default {
+    components: {
+      arrow,
+    },
     data () {
       return {
         items: [
@@ -62,8 +68,11 @@
 @import '../stylus/card.styl'
 
 .third
-  min-height 850px
+  min-height 900px
   background-color rgb(240,240,240)
+  position relative
+  .wrapper
+    color #000
   .headText
     font-size 3rem
     text-align center
