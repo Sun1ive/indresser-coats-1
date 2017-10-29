@@ -12,26 +12,46 @@
           <p>{{ item.title }}</p>
           <div class="border"></div>
           <div class="price">{{ item.price }} ГРН</div>
-          <button class="buyButton">Купить</button>
+          <button class="buyButton" @click.stop="showOrder(item)">Купить</button>
           <!-- <div class="quantity">осталось {{ item.quantity }}шт</div> -->
         </div>
       </v-flex>
     </v-layout>
+    <v-dialog v-model="drawer" max-width="700">
+      <app-order :currentItem="currentItem" @closeModal="closeModal"></app-order>
+    </v-dialog>
   </v-container>
 </template>
 
 <script>
+import order from './modals/order'
+
   export default {
+    components: {
+      'app-order': order
+    },
     data () {
       return {
-         items: [
+        drawer: false,
+        items: [
           {
             title: 'Оверсайз со спущенным рукавом - пинк',
             price: 2499,
             quantity: 7,
             img: '/public/img/p4.png'
           },
-        ]
+        ],
+        currentItem: {}
+      }
+    },
+    methods: {
+      showOrder (item) {
+        this.currentItem = item
+        console.log(this.currentItem);
+        this.drawer = true
+      },
+      closeModal () {
+        this.drawer = false
       }
     }
   }

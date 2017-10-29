@@ -1,7 +1,17 @@
 import Vue from 'vue';
 import './stylus/main.styl';
 import VueScroll from 'vue-scrollto';
-import { Vuetify, VApp, VNavigationDrawer, VGrid, transitions } from 'vuetify';
+import {
+  Vuetify,
+  VApp,
+  VNavigationDrawer,
+  VGrid,
+  VDialog,
+  VForm,
+  VTextfield,
+  VSelect,
+  transitions,
+} from 'vuetify';
 import App from './App.vue';
 
 Vue.use(Vuetify, {
@@ -9,15 +19,19 @@ Vue.use(Vuetify, {
     VApp,
     VNavigationDrawer,
     VGrid,
+    VDialog,
+    VForm,
+    VTextfield,
+    VSelect,
     transitions,
   },
 });
 Vue.use(VueScroll, {
   container: 'body',
   duration: 500,
-  offset: -100,
+  offset: 50,
   cancelable: true,
-  easing: 'linear'
+  easing: 'linear',
 });
 
 new Vue({

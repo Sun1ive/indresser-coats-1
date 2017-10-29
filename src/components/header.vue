@@ -9,10 +9,10 @@
       </v-layout>
       <v-layout justify-center>
         <ul class="menu">
-          <li>Главная</li>
-          <li>Особенности</li>
-          <li>Состав</li>
-          <li>Купить</li>
+          <li v-scroll-to="'.header'">Главная</li>
+          <li v-scroll-to="'.second'">Особенности</li>
+          <li v-scroll-to="'.fourth'">Состав</li>
+          <li v-scroll-to="'.third'">Купить</li>
         </ul>
       </v-layout>
       <v-layout justify-center align-center class="something">
@@ -54,6 +54,11 @@ import arrow from './widgets/arrow'
       list-style none
       color #fff
       font-family Arial, Helvetica, sans-serif
+      cursor pointer
+      transition .4s linear
+      opacity .4
+      &:hover
+        opacity 1
   .something
     height 80%
     p

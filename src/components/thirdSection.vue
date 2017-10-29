@@ -21,44 +21,71 @@
           <p>{{ item.title }}</p>
           <div class="border"></div>
           <div class="price">{{ item.price }} ГРН</div>
-          <button class="buyButton">Купить</button>
+          <button class="buyButton" @click.stop="showModal(item)">Купить</button>
           <!-- <div class="quantity">осталось {{ item.quantity }}шт</div> -->
         </div>
       </v-flex>
     </v-layout>
-    <arrow>Больше информации</arrow>
+    <app-arrow>Больше информации</app-arrow>
+
+
+    <v-dialog v-model="drawer" max-width="700">
+      <app-order @closeModal="closeModal" :currentItem="currentItem"></app-order>
+    </v-dialog>
   </v-container>
 </template>
 
 <script>
 import arrow from './widgets/arrow'
+import order from './modals/order'
+
 
   export default {
     components: {
-      arrow,
+      'app-arrow': arrow,
+      'app-order': order
     },
     data () {
       return {
+        drawer: false,
         items: [
           {
             title: 'Оверсайз со спущенным рукавом - пинк',
             price: 2499,
             quantity: 7,
-            img: '/public/img/p4.png'
+            img: '/public/img/p4.png',
           },
           {
             title: 'Оверсайз со спущенным рукавом - классик',
             price: 1999,
             quantity: 4,
-            img: '/public/img/p5.png'
+            img: '/public/img/p5.png',
           },
           {
             title: 'Оверсайз со спущенным рукавом - классик',
             price: 1999,
             quantity: 4,
-            img: '/public/img/p5.png'
+            img: '/public/img/p5.png',
           },
-        ]
+        ],
+        currentItem: {
+          title: '',
+          price: '',
+          quantity: '',
+          img: ''
+        }
+      }
+    },
+    methods: {
+      showModal (item) {
+        this.currentItem.title = item.title
+        this.currentItem.price = item.price
+        this.currentItem.quantity = item.quantity
+        this.currentItem.img = item.img
+        this.drawer = true
+      },
+      closeModal () {
+        this.drawer = false
       }
     }
   }
@@ -86,5 +113,4 @@ import arrow from './widgets/arrow'
       list-style none
       margin 0 1rem
       position relative
-
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="second">
+  <v-container fluid class="first">
     <v-layout class="layoutContainer" align-center justify-start>
       <v-flex xs12 sm10 md8 lg7>
         <div class="caption">
@@ -13,7 +13,7 @@
 </template>
 
 <style scoped lang="stylus">
-.second
+.first
   background-image url('/public/img/block2.jpg')
   background-size cover
   background-repeat no-repeat
