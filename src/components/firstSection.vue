@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="first">
     <v-layout class="layoutContainer" align-center justify-start>
-      <v-flex xs12 sm10 md8 lg7>
+      <v-flex xs11 sm10 md8 lg7>
         <div class="caption">
           <h2>Пальто inDresser</h2>
           <p>Оверсайз со спущенным рукавом</p>
@@ -32,4 +32,8 @@
   .text
     font-size 1.1rem
     font-weight bold
+
+@media (max-width: 850px)
+  .layoutContainer
+    justify-content center
 </style>

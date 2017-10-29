@@ -73,26 +73,16 @@ import arrow from './widgets/arrow'
     background-color #fff
     opacity .4
 
-@media (max-width: 900px)
-  .header
-    .head
-      font-size 2.3rem
-
-
 @media (max-width: 600px)
   .header
     .menu
       li
         margin 0 1rem
-  .head
-    font-size 2rem
 
 @media (max-width: 400px)
   .header
     .menu
       flex-direction column
-    .head
-      font-size 1.22rem
     p
       font-size 1.1rem
 </style>
