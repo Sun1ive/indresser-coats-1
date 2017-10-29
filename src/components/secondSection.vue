@@ -84,6 +84,8 @@
 
 @media (max-width: 500px)
   .second
+    .layoutContainer
+      justify-content center
     .box
       flex-direction column
       &:nth-child(2)

@@ -14,7 +14,7 @@
       <div class="border mb-5"></div>
     </v-layout>
     <v-layout class="layoutContainer">
-      <v-flex xs12 sm6 md4 class="box" v-for="(item, i) in items" :key="i">
+      <v-flex xs12 sm5 md4 class="box" v-for="(item, i) in items" :key="i">
         <img :src="item.img" :alt="item.title">
         <div class="text">
           <h3>Пальто inDresser</h3>
@@ -113,4 +113,24 @@ import order from './modals/order'
       list-style none
       margin 0 1rem
       position relative
+
+@media (max-width: 700px)
+  .third
+    min-height 1400px
+    .headText
+      font-size 2.3rem
+    ul
+      li
+        text-align center
+    .layoutContainer
+      flex-wrap wrap
+      justify-content center
+
+@media (max-width: 600px)
+  .third
+    min-height 2000px
+
+@media (max-width: 400px)
+  .wrapper
+    font-size .5rem
 </style>
