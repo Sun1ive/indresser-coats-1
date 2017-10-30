@@ -27,7 +27,7 @@
 @media (max-width: 600px)
   .carouselSlider
     min-width 350px
-
+    min-height 350px
 
 @media (max-width 400px)
   .carouselSlider

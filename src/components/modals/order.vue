@@ -91,9 +91,11 @@
   display flex
   padding 2rem
   border-radius 10px
+  .headers
+    padding 1rem 0.5rem
 
 .form
-  min-width 25vh
+  min-width 35vh
   .quantity
     display flex
     font-size 2rem
@@ -125,6 +127,7 @@
   background-color red
   border-radius 7px
   padding 0.3rem 1rem
+  font-size 1.1rem
   color #fff
 
 @media (max-width 450px)
@@ -132,7 +135,8 @@
     .headers
       margin-left 0.5rem !important
     h2
-      font-size 1.7rem
+      font-size 1.3rem
+      text-align left
     h3
       font-size 1.2rem
 </style>

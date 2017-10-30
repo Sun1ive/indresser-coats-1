@@ -41,7 +41,7 @@
       <app-order @closeModal="closeModal" :currentItem="currentItem"></app-order>
     </v-dialog>
 
-    <v-dialog lazy v-model="carousel" max-width="500">
+    <v-dialog ref="dialog" lazy v-model="carousel" max-width="500">
       <app-carousel :currentItem="currentItem"></app-carousel>
     </v-dialog>
   </v-container>
@@ -93,21 +93,22 @@ import carousel from './modals/carousel'
     },
     methods: {
       showModal (item) {
-        this.currentItem.name = item.name
+        /* this.currentItem.name = item.name
         this.currentItem.title = item.title
         this.currentItem.price = item.price
         this.currentItem.quantity = item.quantity
-        this.currentItem.img = item.img
+        this.currentItem.img = item.img */
+        this.currentItem = item
         this.drawer = true
       },
       closeModal () {
         this.drawer = false
       },
       showCarousel (item) {
+        this.$refs.dialog.$refs.dialog.style.borderRadius = '8px'
+        console.log(this.$refs.dialog.$refs.dialog.style.borderRadius);
         this.currentItem = item
-        setTimeout(() => {
-          this.carousel = true
-        }, 100)
+        this.carousel = true
       }
     }
   }
