@@ -16,7 +16,7 @@
         </ul>
       </v-layout>
       <v-layout justify-center align-center class="something">
-        <v-flex xs10 sm8 lg6 text-xs-center>
+        <v-flex xs10 sm8 lg5 text-xs-center>
           <h2 class="head">Идеальное решение на осень.</h2>
           <p class="mb-0">В этом году холода наступили так быстро, что многие неуспели к ним хорошенько подготовиться. А теперь уже вроде бы поздно. Все хорошие вещи скупили, выходить из дома не хочется, а мороз все ближе. Но есть одно любопытное решение. Какое?</p>
         </v-flex>
@@ -77,10 +77,12 @@ import arrow from './widgets/arrow'
   .header
     .menu
       li
-        margin 0 1rem
+        margin 0.5rem 1rem
 
 @media (max-width: 400px)
   .header
+    .something
+      height 70%
     .menu
       flex-direction column
     p
