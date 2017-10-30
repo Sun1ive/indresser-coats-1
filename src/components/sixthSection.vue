@@ -2,7 +2,7 @@
   <v-container class="sixth" fluid>
     <v-layout column align-center class="layoutContainer py-5">
       <h2 class="white--text">Хватит мерзнуть!</h2>
-      <p class="white--text text-xs-center text-sm-left">Купите пально inDresser и уже завтра ловите улыбки мужчин.</p>
+      <p class="white--text text-xs-center text-sm-left">Купите пальто inDresser и уже завтра ловите улыбки мужчин.</p>
     </v-layout>
     <v-layout justify-center class="layoutContainer">
       <v-flex xs12 sm6 md4 class="box" v-for="(item, i) in items" :key="i">
@@ -45,7 +45,7 @@ import carousel from './modals/carousel'
             price: 2499,
             quantity: 7,
             img: '/public/img/p4.png',
-            slider: ['/public/slider/p30bej.jpg','/public/slider/p30bej2.jpg','/public/slider/p30bej3.jpg','/public/slider/p30bej4.jpg','/public/slider/p30bej5.jpg',]
+            slider: ['/public/slider/1.jpg','/public/slider/2.jpg','/public/slider/3.jpg','/public/slider/4.jpg','/public/slider/5.jpg','/public/slider/6.jpg','/public/slider/7.jpg','/public/slider/8.jpg']
           },
         ],
         currentItem: {}

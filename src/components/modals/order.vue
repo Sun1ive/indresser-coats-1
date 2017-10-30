@@ -4,25 +4,19 @@
       <v-flex class="orderTable text-xs-center" xs12>
         <img :src="currentItem.img" :alt="currentItem.title">
         <div class="headers ml-3">
-          <h2>Пальто inDresser</h2>
+          <h2>Пальто</h2>
           <h3>{{ currentItem.title }}</h3>
         </div>
       </v-flex>
     </v-layout>
     <v-layout justify-center class="formContainer">
-      <form action="/public/php/mail.php" method="POST" class="form">
-          <!-- <h3>Кол-во</h3> 
-        <div class="quantity">
-          <div @click="decrement" class="mr-2 but">-</div><div>{{ count }}</div><div @click="count++" class="ml-2 but">+</div>
-        </div> 
-        <v-select v-model="userOrder.size" :items="sizes" label="Выберите размер"></v-select>
-         -->
+      <!-- <form action="/public/php/mail.php" method="POST" class="form"> -->
+      <form class="form" @submit.prevent="submit">
         <h3>Заполните форму:</h3>
-        <v-text-field name="name" label="Имя" required type="text"></v-text-field>
-        <v-text-field name="phone" label="Телефон" required type="number"></v-text-field>
-        <v-text-field name="email" label="Электронная почта" required type="email"></v-text-field>
+        <v-text-field v-model="userData.name" name="name" label="Имя" required type="text"></v-text-field>
+        <v-text-field v-model="userData.phone" name="phone" label="Телефон" required type="number"></v-text-field>
+        <v-text-field v-model="userData.email" name="email" label="Электронная почта" required type="email"></v-text-field>
         <button class="buyButton">Заказать</button>
-        <!-- <span class="ml-3">Итого: {{ fullprice }} грн</span> -->
       </form>
     </v-layout>
     <div class="close" @click="close"></div>
@@ -34,11 +28,11 @@
     props: ['currentItem'],
     data () {
       return {
-        count: 1,
-        colors: ['Красный', 'Красный', 'Красный', 'Красный'],
-        sizes: ['XS', 'S', 'M', 'L'],
-        userOrder: {
-          size: '',
+        userData: {
+          name: '',
+          phone: '',
+          email: '',
+          order: {}
         }
       }
     },
@@ -46,13 +40,29 @@
       close () {
         this.$emit('closeModal')
       },
-      decrement () {
-        if (this.count <= 1) {
-          this.count = 1
-        } else {
-          this.count--;
+      submit () {
+        this.userData.order = this.currentItem
+        // console.log(this.userData.order);
+        Email.send(
+        'coats@indresser.com',
+        'info@indresser.com',
+        'Заказ с сайта coats.indresser.com',
+        `Пользователь: ${this.userData.name}\n
+        заказал: ${this.userData.order.title}\n
+        Телефон: ${this.userData.phone}\n
+        почта: ${this.userData.email}`,
+        'mail.adm.tools',
+        'coats@indresser.com',
+        '3DLao3x1AC8t');
+        alert(`Спасибо ${this.userData.name} за Ваш заказ, скоро мы свяжемся с Вами.`)
+        this.userData = {
+          name: '',
+          phone: '',
+          email: '',
+          order: {}
         }
-      }
+        this.$emit('closeModal')
+      } 
     },
     computed: {
       fullprice () {

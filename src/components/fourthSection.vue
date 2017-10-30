@@ -2,7 +2,7 @@
   <v-container class="fourth" fluid>
     <v-layout column justify-center align-center class="layoutContainer pt-5">
       <h2 class="head">Подробности</h2>
-      <div class="text text-xs-center text-sm-left">О пальто inDresser оверсайз со спущенным рукавом</div>
+      <div class="text text-xs-center text-sm-left">О пальто оверсайз со спущенным рукавом</div>
     </v-layout>
     <v-layout column align-center justify-center class="my-3">
       <div class="colors">Цвета</div>
@@ -158,6 +158,13 @@
       font-size .9rem
       margin-left 0rem
       padding 1rem
+  .colors
+  .composition
+    &:before
+    &:after
+      width 150px
+
+
 
 @media (max-width 500px)
   .fourth
@@ -167,4 +174,13 @@
         font-size 2.5rem
       .name
         font-size 1.1rem
+  .brownBG
+    p
+      font-size .8rem
+      line-height 1rem
+  .colors
+  .composition
+    &:before
+    &:after
+      width 100px
 </style>

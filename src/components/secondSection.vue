@@ -46,7 +46,8 @@
 
 <style scoped lang="stylus">
 .second
-  background-color #ffeed3
+  background-image url('/public/img/block0.jpg')
+  background-size cover
   min-height 1050px
   .box
     display flex

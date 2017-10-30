@@ -20,7 +20,7 @@
           <h3>{{ item.name }}</h3>
           <p>{{ item.title }}</p>
           <div class="border"></div>
-          <div class="price">{{ item.price }} ГРН</div>
+          <div class="price"><s>{{ item.oldprice }}</s> {{ item.price }} ГРН</div>
           <button class="buyButton" @click.stop="showModal(item)">Купить</button>
         </div>
       </v-flex>
@@ -70,15 +70,16 @@ import carousel from './modals/carousel'
             price: 2499,
             quantity: 7,
             img: '/public/img/p4.png',
-            slider: ['/public/slider/p30bej.jpg','/public/slider/p30bej2.jpg','/public/slider/p30bej3.jpg','/public/slider/p30bej4.jpg','/public/slider/p30bej5.jpg']
+            slider: ['/public/slider/1.jpg','/public/slider/2.jpg','/public/slider/3.jpg','/public/slider/4.jpg','/public/slider/5.jpg','/public/slider/6.jpg','/public/slider/7.jpg','/public/slider/8.jpg']
           },
           {
             name: 'Пальто + платье',
             title: 'готовый образ от inDresser',
-            price: 1999,
+            oldprice: 3499,
+            price: 3289,
             quantity: 4,
             img: '/public/img/p5.png',
-            slider: ['/public/slider/p30green.jpg','/public/slider/p30green2.jpg','/public/slider/p30green3.jpg','/public/slider/p30green4.jpg']
+            slider: ['/public/slider/ready1.jpg','/public/slider/ready2.jpg','/public/slider/ready3.jpg']
           }
         ],
         currentItem: {

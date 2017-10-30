@@ -15,6 +15,7 @@
 <style scoped lang="stylus">
 .first
   background-image url('/public/img/bitmap@2x.jpg')
+  background-color #fff
   background-size cover
   background-repeat no-repeat
   height 675px
@@ -40,9 +41,9 @@
       justify-content center
     .text
       text-align center
-      text-shadow 1px 1px 1px #fff
     
 @media (max-width: 500px)
   .first
+    background-image url('/public/img/bitmap@2x.png')
     background-position 81% 100%
 </style>
