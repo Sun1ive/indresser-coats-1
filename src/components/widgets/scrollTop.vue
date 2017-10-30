@@ -20,9 +20,11 @@
   height 40px
   position fixed
   left 30px
-  bottom 30px
+  bottom 90px
   font-size 3rem
   color #fff
+  cursor pointer
+  text-shadow 1px 1px 1px #333
   &:after
     position absolute
     content '\2191'

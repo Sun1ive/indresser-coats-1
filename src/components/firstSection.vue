@@ -3,8 +3,8 @@
     <v-layout class="layoutContainer" align-center justify-start>
       <v-flex xs11 sm10 md8 lg7>
         <div class="caption">
-          <h2>Пальто inDresser</h2>
-          <p>Оверсайз со спущенным рукавом</p>
+          <h2>Пальто оверсайз</h2>
+          <p>со спущенным рукавом</p>
         </div>
         <p class="text">Уникальная вещь, которая не просто подчеркнет женственность, но еще и согреет этой холодной осенью. В чем же секрет этого незаменимого предмета гардероба?</p>
       </v-flex>
@@ -14,7 +14,7 @@
 
 <style scoped lang="stylus">
 .first
-  background-image url('/public/img/block2.jpg')
+  background-image url('/public/img/bitmap@2x.jpg')
   background-size cover
   background-repeat no-repeat
   height 675px
@@ -34,6 +34,15 @@
     font-weight bold
 
 @media (max-width: 850px)
-  .layoutContainer
-    justify-content center
+  .first
+    background-position 50% 100%
+    .layoutContainer
+      justify-content center
+    .text
+      text-align center
+      text-shadow 1px 1px 1px #fff
+    
+@media (max-width: 500px)
+  .first
+    background-position 81% 100%
 </style>

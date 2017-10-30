@@ -8,16 +8,13 @@
       <div class="colors">Цвета</div>
       <ul>
         <li>
-          <div class="Red"></div>
+          <div class="bej"></div>
         </li>
         <li>
-          <div class="Blue"></div>
+          <div class="darkGreen"></div>
         </li>
         <li>
-          <div class="Green"></div>
-        </li>
-        <li>
-          <div class="Yellow"></div>
+          <div class="blued"></div>
         </li>
       </ul>
     </v-layout>
@@ -86,6 +83,12 @@
         border 5px solid #fff
         background-color green
         box-shadow 1px 1px 1px #c0c0c0
+      .bej
+        background-color #605145
+      .darkGreen
+        background-color #1e2921
+      .blued
+        background-color #273d37
   .comp
     margin 0 2rem
     text-align center

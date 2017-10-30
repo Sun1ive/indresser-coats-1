@@ -4,12 +4,12 @@ import VueScroll from 'vue-scrollto';
 import {
   Vuetify,
   VApp,
-  VNavigationDrawer,
+  VCarousel,
+  VParallax,
   VGrid,
   VDialog,
   VForm,
   VTextfield,
-  VSelect,
   transitions,
 } from 'vuetify';
 import App from './App.vue';
@@ -17,12 +17,12 @@ import App from './App.vue';
 Vue.use(Vuetify, {
   components: {
     VApp,
-    VNavigationDrawer,
+    VCarousel,
+    VParallax,
     VGrid,
     VDialog,
     VForm,
     VTextfield,
-    VSelect,
     transitions,
   },
 });

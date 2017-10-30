@@ -15,14 +15,13 @@
     </v-layout>
     <v-layout class="layoutContainer">
       <v-flex xs12 sm5 md4 class="box" v-for="(item, i) in items" :key="i">
-        <img :src="item.img" :alt="item.title">
+        <img :src="item.img" :alt="item.title" @click="showCarousel(item)">
         <div class="text">
-          <h3>Пальто inDresser</h3>
+          <h3>{{ item.name }}</h3>
           <p>{{ item.title }}</p>
           <div class="border"></div>
           <div class="price">{{ item.price }} ГРН</div>
           <button class="buyButton" @click.stop="showModal(item)">Купить</button>
-          <!-- <div class="quantity">осталось {{ item.quantity }}шт</div> -->
         </div>
       </v-flex>
         <v-flex xs12 sm5 md4 class="box">
@@ -30,9 +29,8 @@
         <div class="text">
           <h3>Пальто другой фирмы</h3>
           <div class="border"></div>
-          <div class="price">8888 ГРН</div>
+          <div class="price">3000-5000 ГРН</div>
           <p>Продается в любом обычном магазине</p>
-          <!-- <div class="quantity">осталось {{ item.quantity }}шт</div> -->
         </div>
         </v-flex>
     </v-layout>
@@ -42,41 +40,46 @@
     <v-dialog lazy v-model="drawer" max-width="500">
       <app-order @closeModal="closeModal" :currentItem="currentItem"></app-order>
     </v-dialog>
+
+    <v-dialog lazy v-model="carousel" max-width="500">
+      <app-carousel :currentItem="currentItem"></app-carousel>
+    </v-dialog>
   </v-container>
 </template>
 
 <script>
 import arrow from './widgets/arrow'
 import order from './modals/order'
+import carousel from './modals/carousel'
 
 
   export default {
     components: {
       'app-arrow': arrow,
-      'app-order': order
+      'app-order': order,
+      'app-carousel': carousel
     },
     data () {
       return {
         drawer: false,
+        carousel: false,
         items: [
           {
-            title: 'Оверсайз со спущенным рукавом - пинк',
+            name: 'Пальто оверсайз',
+            title: 'со спущенным рукавом - пинк',
             price: 2499,
             quantity: 7,
             img: '/public/img/p4.png',
+            slider: ['/public/slider/p30bej.jpg','/public/slider/p30bej2.jpg','/public/slider/p30bej3.jpg','/public/slider/p30bej4.jpg','/public/slider/p30bej5.jpg']
           },
           {
-            title: 'Оверсайз со спущенным рукавом - классик',
+            name: 'Пальто + платье',
+            title: 'готовый образ от inDresser',
             price: 1999,
             quantity: 4,
             img: '/public/img/p5.png',
-          },
-/*           {
-            title: 'Пальто другой фирмы',
-            price: 8888,
-            quantity: 4,
-            img: '/public/img/p6.png',
-          }, */
+            slider: ['/public/slider/p30green.jpg','/public/slider/p30green2.jpg','/public/slider/p30green3.jpg','/public/slider/p30green4.jpg']
+          }
         ],
         currentItem: {
           title: '',
@@ -96,6 +99,12 @@ import order from './modals/order'
       },
       closeModal () {
         this.drawer = false
+      },
+      showCarousel (item) {
+        this.currentItem = item
+        setTimeout(() => {
+          this.carousel = true
+        }, 100)
       }
     }
   }
