@@ -4,7 +4,7 @@
       <h2 class="mb-2">Отзывы</h2>
       <p>Нет большей награды чем увидеть еще одну девушку в нашем пальто. Спасибо за потрясающий фидбек.</p>
     </v-layout>
-    <v-layout column class="layoutContainer my-5" justify-center align-center>
+    <v-layout column class="layoutContainer pb-5 my-5" justify-center align-center>
       <div class="review" v-for="(item, i) in reviews" :key="i">
         <img class="firstQuote" src="/public/img/dot.png" alt="quote">
         <div>{{ item.text }}</div>
@@ -74,4 +74,10 @@
         width 100%
         display block
         text-align right
+
+@media (max-width 500px)
+  .fifth .layoutContainer p
+    font-size 1.1rem
+  .fifth .layoutContainer .review
+    font-size 1.1rem
 </style>

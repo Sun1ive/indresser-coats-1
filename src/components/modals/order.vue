@@ -3,24 +3,26 @@
     <v-layout justify-center class="formContainer">
       <v-flex class="orderTable text-xs-center" xs12>
         <img :src="currentItem.img" :alt="currentItem.title">
-        <div class="ml-3">
+        <div class="headers ml-3">
           <h2>Пальто inDresser</h2>
           <h3>{{ currentItem.title }}</h3>
         </div>
       </v-flex>
     </v-layout>
     <v-layout justify-center class="formContainer">
-      <form action="" class="form">
-          <h3>Кол-во</h3>
+      <form action="/public/php/mail.php" method="POST" class="form">
+          <!-- <h3>Кол-во</h3> 
         <div class="quantity">
           <div @click="decrement" class="mr-2 but">-</div><div>{{ count }}</div><div @click="count++" class="ml-2 but">+</div>
-        </div>
+        </div> 
         <v-select v-model="userOrder.size" :items="sizes" label="Выберите размер"></v-select>
+         -->
         <h3>Заполните форму:</h3>
-        <v-text-field label="Имя" required type="text"></v-text-field>
-        <v-text-field label="Телефон" required type="number"></v-text-field>
-        <v-text-field label="Электронная почта" required type="email"></v-text-field>
-        <button class="buyButton">Купить</button><span class="ml-3">Итого: {{ fullprice }} грн</span>
+        <v-text-field name="name" label="Имя" required type="text"></v-text-field>
+        <v-text-field name="phone" label="Телефон" required type="number"></v-text-field>
+        <v-text-field name="email" label="Электронная почта" required type="email"></v-text-field>
+        <button class="buyButton">Заказать</button>
+        <!-- <span class="ml-3">Итого: {{ fullprice }} грн</span> -->
       </form>
     </v-layout>
     <div class="close" @click="close"></div>
@@ -81,7 +83,7 @@
   border-radius 10px
 
 .form
-  min-width 450px
+  min-width 25vh
   .quantity
     display flex
     font-size 2rem
@@ -114,4 +116,13 @@
   border-radius 7px
   padding 0.3rem 1rem
   color #fff
+
+@media (max-width 450px)
+  .order
+    .headers
+      margin-left 0.5rem !important
+    h2
+      font-size 1.7rem
+    h3
+      font-size 1.2rem
 </style>

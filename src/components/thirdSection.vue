@@ -25,11 +25,21 @@
           <!-- <div class="quantity">осталось {{ item.quantity }}шт</div> -->
         </div>
       </v-flex>
+        <v-flex xs12 sm5 md4 class="box">
+        <img src="/public/img/p6.png" alt="coat">
+        <div class="text">
+          <h3>Пальто другой фирмы</h3>
+          <div class="border"></div>
+          <div class="price">8888 ГРН</div>
+          <p>Продается в любом обычном магазине</p>
+          <!-- <div class="quantity">осталось {{ item.quantity }}шт</div> -->
+        </div>
+        </v-flex>
     </v-layout>
     <app-arrow>Больше информации</app-arrow>
 
 
-    <v-dialog v-model="drawer" max-width="700">
+    <v-dialog lazy v-model="drawer" max-width="500">
       <app-order @closeModal="closeModal" :currentItem="currentItem"></app-order>
     </v-dialog>
   </v-container>
@@ -61,12 +71,12 @@ import order from './modals/order'
             quantity: 4,
             img: '/public/img/p5.png',
           },
-          {
-            title: 'Оверсайз со спущенным рукавом - классик',
-            price: 1999,
+/*           {
+            title: 'Пальто другой фирмы',
+            price: 8888,
             quantity: 4,
-            img: '/public/img/p5.png',
-          },
+            img: '/public/img/p6.png',
+          }, */
         ],
         currentItem: {
           title: '',

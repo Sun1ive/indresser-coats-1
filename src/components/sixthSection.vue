@@ -2,7 +2,7 @@
   <v-container class="sixth" fluid>
     <v-layout column align-center class="layoutContainer py-5">
       <h2 class="white--text">Хватит мерзнуть!</h2>
-      <p class="white--text">Купите пально inDresser и уже завтра ловите улыбки мужчин.</p>
+      <p class="white--text text-xs-center text-sm-left">Купите пально inDresser и уже завтра ловите улыбки мужчин.</p>
     </v-layout>
     <v-layout justify-center class="layoutContainer">
       <v-flex xs12 sm6 md4 class="box" v-for="(item, i) in items" :key="i">
@@ -17,7 +17,7 @@
         </div>
       </v-flex>
     </v-layout>
-    <v-dialog v-model="drawer" max-width="700">
+    <v-dialog lazy v-model="drawer" max-width="500">
       <app-order :currentItem="currentItem" @closeModal="closeModal"></app-order>
     </v-dialog>
   </v-container>
