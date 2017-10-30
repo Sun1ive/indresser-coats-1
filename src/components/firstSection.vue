@@ -14,7 +14,7 @@
 
 <style scoped lang="stylus">
 .first
-  background-image url('/public/img/bitmap@2x.jpg')
+  background-image url('/public/img/2section.jpg')
   background-color #fff
   background-size cover
   background-repeat no-repeat
@@ -44,6 +44,6 @@
     
 @media (max-width: 500px)
   .first
-    background-image url('/public/img/bitmap@2x.png')
+    background-image url('/public/img/2sectionOp.jpg')
     background-position 81% 100%
 </style>

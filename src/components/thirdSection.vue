@@ -79,10 +79,11 @@ import carousel from './modals/carousel'
             price: 3289,
             quantity: 4,
             img: '/public/img/p5.png',
-            slider: ['/public/slider/ready1.jpg','/public/slider/ready2.jpg','/public/slider/ready3.jpg']
+            slider: ['/public/slider/ready1.jpg','/public/slider/ready2.jpg','/public/slider/ready3.jpg','/public/slider/ready1.jpg','/public/slider/ready2.jpg','/public/slider/ready3.jpg','/public/slider/ready1.jpg','/public/slider/ready2.jpg']
           }
         ],
         currentItem: {
+          name: '',
           title: '',
           price: '',
           quantity: '',
@@ -92,6 +93,7 @@ import carousel from './modals/carousel'
     },
     methods: {
       showModal (item) {
+        this.currentItem.name = item.name
         this.currentItem.title = item.title
         this.currentItem.price = item.price
         this.currentItem.quantity = item.quantity
@@ -142,6 +144,7 @@ import carousel from './modals/carousel'
     ul
       li
         text-align center
+        margin 0 .8rem
     .layoutContainer
       flex-wrap wrap
       justify-content center
@@ -152,5 +155,5 @@ import carousel from './modals/carousel'
 
 @media (max-width: 400px)
   .wrapper
-    font-size .5rem
+    font-size .6rem
 </style>

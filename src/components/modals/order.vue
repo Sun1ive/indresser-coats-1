@@ -4,7 +4,7 @@
       <v-flex class="orderTable text-xs-center" xs12>
         <img :src="currentItem.img" :alt="currentItem.title">
         <div class="headers ml-3">
-          <h2>Пальто</h2>
+          <h2>{{ currentItem.name }}</h2>
           <h3>{{ currentItem.title }}</h3>
         </div>
       </v-flex>
