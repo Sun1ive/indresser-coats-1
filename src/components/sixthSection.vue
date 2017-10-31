@@ -11,7 +11,7 @@
           <h3>Пальто inDresser</h3>
           <p>{{ item.title }}</p>
           <div class="border"></div>
-          <div class="price">{{ item.price }} ГРН</div>
+          <div class="price"><s>{{ item.oldprice }}</s> {{ item.price }} ГРН</div>
           <button class="buyButton" @click.stop="showOrder(item)">Купить</button>
         </div>
       </v-flex>
@@ -41,8 +41,9 @@ import carousel from './modals/carousel'
         carousel: false,
         items: [
           {
-            title: 'Оверсайз со спущенным рукавом - пинк',
-            price: 2499,
+            title: 'Оверсайз со спущенным рукавом',
+            oldprice: 2790,
+            price: 1953,
             quantity: 7,
             img: '/public/img/p4.png',
             slider: ['/public/slider/1.jpg','/public/slider/2.jpg','/public/slider/3.jpg','/public/slider/4.jpg','/public/slider/5.jpg','/public/slider/6.jpg','/public/slider/7.jpg','/public/slider/8.jpg']
@@ -54,7 +55,6 @@ import carousel from './modals/carousel'
     methods: {
       showOrder (item) {
         this.currentItem = item
-        console.log(this.currentItem);
         this.drawer = true
       },
       closeModal () {
@@ -62,7 +62,6 @@ import carousel from './modals/carousel'
       },
       showCarousel (item) {
         this.currentItem = item
-        console.log(this.currentItem);
         this.carousel = true
       }
     }
