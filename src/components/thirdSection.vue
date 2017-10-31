@@ -67,7 +67,8 @@ import carousel from './modals/carousel'
           {
             name: 'Пальто оверсайз',
             title: 'со спущенным рукавом - пинк',
-            price: 2499,
+            oldprice: 2790,
+            price: 1953,
             quantity: 7,
             img: '/public/img/p4.png',
             slider: ['/public/slider/1.jpg','/public/slider/2.jpg','/public/slider/3.jpg','/public/slider/4.jpg','/public/slider/5.jpg','/public/slider/6.jpg','/public/slider/7.jpg','/public/slider/8.jpg']
@@ -75,8 +76,8 @@ import carousel from './modals/carousel'
           {
             name: 'Пальто + платье',
             title: 'готовый образ от inDresser',
-            oldprice: 3499,
-            price: 3289,
+            oldprice: 3780,
+            price: 2844,
             quantity: 4,
             img: '/public/img/p5.png',
             slider: ['/public/slider/ready1.jpg','/public/slider/ready2.jpg','/public/slider/ready3.jpg','/public/slider/ready1.jpg','/public/slider/ready2.jpg','/public/slider/ready3.jpg','/public/slider/ready1.jpg','/public/slider/ready2.jpg']
@@ -93,11 +94,6 @@ import carousel from './modals/carousel'
     },
     methods: {
       showModal (item) {
-        /* this.currentItem.name = item.name
-        this.currentItem.title = item.title
-        this.currentItem.price = item.price
-        this.currentItem.quantity = item.quantity
-        this.currentItem.img = item.img */
         this.currentItem = item
         this.drawer = true
       },
@@ -106,7 +102,6 @@ import carousel from './modals/carousel'
       },
       showCarousel (item) {
         this.$refs.dialog.$refs.dialog.style.borderRadius = '8px'
-        console.log(this.$refs.dialog.$refs.dialog.style.borderRadius);
         this.currentItem = item
         this.carousel = true
       }

@@ -5,11 +5,11 @@ import {
   Vuetify,
   VApp,
   VCarousel,
-  VParallax,
   VGrid,
   VDialog,
   VForm,
   VTextfield,
+  VSelect,
   transitions,
 } from 'vuetify';
 import App from './App.vue';
@@ -18,11 +18,11 @@ Vue.use(Vuetify, {
   components: {
     VApp,
     VCarousel,
-    VParallax,
     VGrid,
     VDialog,
     VForm,
     VTextfield,
+    VSelect,
     transitions,
   },
 });

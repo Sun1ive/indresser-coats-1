@@ -10,12 +10,12 @@
       </v-flex>
     </v-layout>
     <v-layout justify-center class="formContainer">
-      <!-- <form action="/public/php/mail.php" method="POST" class="form"> -->
       <form class="form" @submit.prevent="submit">
         <h3>Заполните форму:</h3>
+        <v-select :items="sizes" v-model="userData.size" label="Выберите размер"></v-select>
         <v-text-field v-model="userData.name" name="name" label="Имя" required type="text"></v-text-field>
         <v-text-field v-model="userData.phone" name="phone" label="Телефон" required type="number"></v-text-field>
-        <v-text-field v-model="userData.email" name="email" label="Электронная почта" required type="email"></v-text-field>
+        <!-- <v-text-field v-model="userData.email" name="email" label="Электронная почта" required type="email"></v-text-field> -->
         <button class="buyButton">Заказать</button>
       </form>
     </v-layout>
@@ -31,9 +31,10 @@
         userData: {
           name: '',
           phone: '',
-          email: '',
+          size: '',
           order: {}
-        }
+        },
+        sizes: ['XS','S','M','L']
       }
     },
     methods: {
@@ -42,7 +43,6 @@
       },
       submit () {
         this.userData.order = this.currentItem
-        // console.log(this.userData.order);
         Email.send(
         'coats@indresser.com',
         'info@indresser.com',
@@ -50,7 +50,7 @@
         `Пользователь: ${this.userData.name}\n
         заказал: ${this.userData.order.title}\n
         Телефон: ${this.userData.phone}\n
-        почта: ${this.userData.email}`,
+        Размер: ${this.userData.size}`,
         'mail.adm.tools',
         'coats@indresser.com',
         '3DLao3x1AC8t');
@@ -58,16 +58,11 @@
         this.userData = {
           name: '',
           phone: '',
-          email: '',
-          order: {}
+          size: '',
+          order: {},
         }
         this.$emit('closeModal')
       } 
-    },
-    computed: {
-      fullprice () {
-        return this.currentItem.price * this.count
-      }
     }
   }
 </script>
@@ -93,6 +88,13 @@
   border-radius 10px
   .headers
     padding 1rem 0.5rem
+    .sizes
+      display flex
+      justify-content space-around
+      font-size 1.5rem
+      margin-top 1rem
+      li
+        list-style none
 
 .form
   min-width 35vh
@@ -112,7 +114,7 @@
     max-width 100px
     max-height 100px
     border 3px solid #fff
-    box-shadow 1px 1px 1px #333
+    // box-shadow 1px 1px 1px #333
     border-radius 50%
   h3
     font-size 1.5rem
@@ -131,12 +133,30 @@
   color #fff
 
 @media (max-width 450px)
-  .order
+  .orderTable
     .headers
-      margin-left 0.5rem !important
+      margin-left 0.5rem 
+  .order
     h2
       font-size 1.3rem
       text-align left
+      font-weight bold
     h3
       font-size 1.2rem
+      text-align left
+
+@media (max-width 350px)
+  .orderTable
+    flex-direction column
+    align-items center
+    .headers
+      margin-left 0 !important
+      padding 1rem 0
+    h3
+      text-align left
+      font-size 1rem
+  .order
+    h2
+      font-size 1.3rem
+
 </style>

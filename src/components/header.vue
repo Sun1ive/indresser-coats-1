@@ -79,8 +79,9 @@ import arrow from './widgets/arrow'
       li
         margin 0.5rem 1rem
 
-@media (max-width: 400px)
+@media (max-width: 420px)
   .header
+    background-position 50% 0
     .something
       height 70%
     .menu

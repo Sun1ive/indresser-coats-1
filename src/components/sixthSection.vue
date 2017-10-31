@@ -76,6 +76,7 @@ import carousel from './modals/carousel'
   background-image url('/public/img/block4.jpg')
   background-size cover
   min-height 830px
+  // margin-top -1rem
   p
     font-size 1.3rem
 </style>
