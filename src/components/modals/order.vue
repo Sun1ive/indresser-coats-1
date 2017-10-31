@@ -3,7 +3,7 @@
     <v-layout justify-center class="formContainer">
       <v-flex class="orderTable text-xs-center" xs12>
         <img :src="currentItem.img" :alt="currentItem.title">
-        <div class="headers ml-3">
+        <div class="headers">
           <h2>{{ currentItem.name }}</h2>
           <h3>{{ currentItem.title }}</h3>
         </div>

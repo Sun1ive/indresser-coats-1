@@ -2,13 +2,13 @@
   <v-container class="sixth" fluid>
     <v-layout column align-center class="layoutContainer py-5">
       <h2 class="white--text">Хватит мерзнуть!</h2>
-      <p class="white--text text-xs-center text-sm-left">Купите пальто inDresser и уже завтра ловите улыбки мужчин.</p>
+      <p class="white--text text-xs-center text-sm-left">Купите пальто оверсайз и уже завтра ловите улыбки мужчин</p>
     </v-layout>
     <v-layout justify-center class="layoutContainer">
       <v-flex xs12 sm6 md4 class="box" v-for="(item, i) in items" :key="i">
         <img :src="item.img" :alt="item.title" @click.stop="showCarousel(item)">
         <div class="text">
-          <h3>Пальто inDresser</h3>
+          <h3>Пальто оверсайз</h3>
           <p>{{ item.title }}</p>
           <div class="border"></div>
           <div class="price"><s>{{ item.oldprice }}</s> {{ item.price }} ГРН</div>
@@ -41,7 +41,7 @@ import carousel from './modals/carousel'
         carousel: false,
         items: [
           {
-            title: 'Оверсайз со спущенным рукавом',
+            title: 'с приспущенным рукавом',
             oldprice: 2790,
             price: 1953,
             quantity: 7,
@@ -77,5 +77,5 @@ import carousel from './modals/carousel'
   min-height 830px
   // margin-top -1rem
   p
-    font-size 1.3rem
+    font-size 1.2rem
 </style>

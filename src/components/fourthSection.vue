@@ -2,7 +2,7 @@
   <v-container class="fourth" fluid>
     <v-layout column justify-center align-center class="layoutContainer pt-5">
       <h2 class="head">Подробности</h2>
-      <div class="text text-xs-center text-sm-left mt-2">о пальто оверсайз со спущенным рукавом</div>
+      <div class="text text-xs-center text-sm-left mt-2">о пальто оверсайз с приспущенным рукавом</div>
     </v-layout>
     <v-layout column align-center justify-center class="my-3">
       <div class="colors">Цвета</div>
@@ -77,8 +77,8 @@
       list-style none
       margin 0 .5rem
       div
-        width 50px
-        height 50px
+        width 70px
+        height 70px
         border-radius 50%
         border 5px solid #fff
         background-color green
@@ -93,7 +93,7 @@
     margin 0 2rem
     text-align center
     .percent
-      font-size 4rem
+      font-size 2rem
       font-weight bold
     .name
       font-size 1.2rem

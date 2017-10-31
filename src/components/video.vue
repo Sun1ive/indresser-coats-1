@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="video">
-    <video src="/public/video/ind2.webm" muted="true" loop="true" autoplay="true"></video>
+    <video src="/public/video/ind2.webm" muted loop autoplay></video>
   </v-container>
 </template>
 
