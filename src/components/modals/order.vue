@@ -43,7 +43,7 @@
       submit () {
         this.userData.order = this.currentItem
         Email.send(
-        'coats@indresser.com',
+        `${this.userData.name}`,
         'info@indresser.com',
         'Заказ с сайта coats.indresser.com',
         `Пользователь: ${this.userData.name}\n
