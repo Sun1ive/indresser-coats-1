@@ -1,20 +1,19 @@
 <template>
-  <v-container class="order">
-    <v-layout justify-center class="formContainer">
-      <v-flex class="orderTable text-xs-center" xs12>
-        <img :src="currentItem.img" :alt="currentItem.title">
+  <v-container fluid class="order">
+    <v-layout>
+      <v-flex xs12 class="orderTable" v-for="(item, i) in items" :key="i">
+        <img :src="item.img" :alt="item.title">
         <div class="headers">
-          <h2>{{ currentItem.name }}</h2>
-          <h3>{{ currentItem.title }}</h3>
+          <h3>{{ item.name }}</h3>
+          <h2 class="red--text">{{ item.title }}</h2>
         </div>
       </v-flex>
     </v-layout>
     <v-layout justify-center class="formContainer">
       <form class="form" @submit.prevent="submit">
         <h3>Заполните форму:</h3>
-        <v-select :items="sizes" v-model="userData.size" label="Выберите размер"></v-select>
-        <v-text-field v-model="userData.name" name="name" label="Имя" required type="text"></v-text-field>
-        <v-text-field v-model="userData.phone" name="phone" label="Телефон" required type="number"></v-text-field>
+        <v-text-field v-model="userData.name" label="Имя" required type="text"></v-text-field>
+        <v-text-field v-model="userData.phone" label="Телефон" required type="number"></v-text-field>
         <button class="buyButton">Заказать</button>
       </form>
     </v-layout>
@@ -24,16 +23,19 @@
 
 <script>
   export default {
-    props: ['currentItem'],
     data () {
       return {
+        items: [
+          {
+            name: 'При покупке пальто',
+            title: 'получите скидку 30%',
+            img: '/public/img/p4.png',
+          },
+        ],
         userData: {
           name: '',
-          phone: '',
-          size: '',
-          order: {}
-        },
-        sizes: ['XS','S','M','L']
+          phone: ''
+        }
       }
     },
     methods: {
@@ -45,11 +47,9 @@
         Email.send(
         'coats@indresser.com',
         'info@indresser.com',
-        'Заказ с сайта coats.indresser.com',
+        'Заказ на скидку с сайта coats.indresser.com',
         `Пользователь: ${this.userData.name}\n
-        заказал: ${this.userData.order.title}\n
-        Телефон: ${this.userData.phone}\n
-        Размер: ${this.userData.size}`,
+        Телефон: ${this.userData.phone}`,
         'mail.adm.tools',
         'coats@indresser.com',
         '3DLao3x1AC8t');
@@ -57,16 +57,16 @@
         this.userData = {
           name: '',
           phone: '',
-          size: '',
-          order: {},
         }
         this.$emit('closeModal')
       } 
-    }
+    },
   }
 </script>
 
 <style scoped lang="stylus">
 @import '../../stylus/order.styl'
 
+.order
+  min-height 400px
 </style>

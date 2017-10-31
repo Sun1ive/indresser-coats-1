@@ -8,7 +8,7 @@
       <v-flex xs12 sm6 md4 class="box" v-for="(item, i) in items" :key="i">
         <img :src="item.img" :alt="item.title" @click.stop="showCarousel(item)">
         <div class="text">
-          <h3>Пальто оверсайз</h3>
+          <h3>{{ item.name }}</h3>
           <p>{{ item.title }}</p>
           <div class="border"></div>
           <div class="price"><s>{{ item.oldprice }}</s> {{ item.price }} ГРН</div>
@@ -41,6 +41,7 @@ import carousel from './modals/carousel'
         carousel: false,
         items: [
           {
+            name: 'Пальто оверсайз',
             title: 'с приспущенным рукавом',
             oldprice: 2790,
             price: 1953,

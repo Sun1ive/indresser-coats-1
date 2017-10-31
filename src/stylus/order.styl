@@ -1,0 +1,80 @@
+.close
+  background-image url('/public/img/close.svg')
+  width 40px
+  height 40px
+  position absolute
+  top 5%
+  right 2%
+  cursor pointer
+
+
+.formContainer
+  max-width 550px
+  margin 0 auto
+
+.orderTable
+  display flex
+  padding 2rem
+  border-radius 10px
+  .headers
+    padding 1rem 0.5rem
+    .sizes
+      display flex
+      justify-content space-around
+      font-size 1.5rem
+      margin-top 1rem
+      li
+        list-style none   
+
+.order
+  background-color #fff
+  min-height 500px
+  border-radius 10px
+  position relative
+  img
+    max-width 100px
+    max-height 100px
+    border 3px solid #fff
+    border-radius 50%
+  h3
+    font-size 1.5rem
+    line-height 2rem
+    margin-bottom 0
+  h2
+    font-size 2rem
+    margin-bottom 0
+    line-height 2rem
+
+.buyButton
+  background-color red
+  border-radius 7px
+  padding 0.3rem 1rem
+  font-size 1.1rem
+  color #fff
+
+@media (max-width 450px)
+  .orderTable
+    .headers
+      margin-left 0.5rem 
+  .order
+    h2
+      font-size 1.3rem
+      text-align left
+      font-weight bold
+    h3
+      font-size 1.2rem
+      text-align left
+
+@media (max-width 350px)
+  .orderTable
+    flex-direction column
+    align-items center
+    .headers
+      margin-left 0 !important
+      padding 1rem 0
+    h3
+      text-align left
+      font-size 1rem
+  .order
+    h2
+      font-size 1.3rem
