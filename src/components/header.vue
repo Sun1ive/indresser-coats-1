@@ -15,9 +15,11 @@
           <li v-scroll-to="'.third'">Купить</li>
         </ul>
       </v-layout>
+      <v-layout class="Header" justify-center align-end>
+        <h2 class="head">Идеальное решение на осень.</h2>
+      </v-layout>
       <v-layout justify-center align-center class="something">
         <v-flex xs10 sm8 lg5 text-xs-center>
-          <h2 class="head">Идеальное решение на осень.</h2>
           <p class="mb-0">В этом году холода наступили так быстро, что многие неуспели к ним хорошенько подготовиться. А теперь уже вроде бы поздно. Все хорошие вещи скупили, выходить из дома не хочется, а мороз все ближе. Но есть одно любопытное решение. Какое?</p>
         </v-flex>
       </v-layout>
@@ -59,8 +61,11 @@ import arrow from './widgets/arrow'
       opacity .4
       &:hover
         opacity 1
+  .Header
+    height 40%
+    margin-bottom 2rem
   .something
-    height 80%
+    height 10%
     p
       color #fff
       font-size 1rem
@@ -82,8 +87,10 @@ import arrow from './widgets/arrow'
 @media (max-width: 420px)
   .header
     background-position 50% 0
+    .Header
+      height 20%
     .something
-      height 70%
+      height 30%
     .menu
       flex-direction column
     p

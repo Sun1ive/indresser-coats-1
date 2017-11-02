@@ -3,7 +3,7 @@
     <v-layout class="layoutContainer" align-center justify-start>
       <v-flex xs11 sm10 md8 lg7>
         <div class="caption">
-          <h2>Пальто оверсайз</h2>
+          <h2>Пальто свободного кроя</h2>
           <p>с приспущенным рукавом</p>
         </div>
         <p class="text">Уникальная вещь, которая не просто подчеркнет женственность, но еще и согреет этой холодной осенью. В чем же секрет этого незаменимого предмета гардероба?</p>
@@ -28,6 +28,7 @@
       color #A14F26
       h2
         line-height 4rem
+        font-size 3rem
       p
         font-size 2rem
   .text
@@ -46,4 +47,11 @@
   .first
     background-image url('/public/img/2sectionOp.jpg')
     background-position 81% 100%
+    .layoutContainer
+      .caption
+        h2
+          font-size 2rem
+          line-height 2.3rem
+        p
+          line-height 2.3rem
 </style>

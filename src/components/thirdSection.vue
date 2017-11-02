@@ -1,7 +1,9 @@
 <template>
   <v-container class="third" fluid>
     <v-layout justify-center class="layoutContainer">
-      <h2 class="headText">Закажите пальто сейчас <br><span class="red--text"> и получите скидку 30%.</span></h2>
+      <h2 class="headText">Закажите пальто сейчас <br>
+        <span class="red--text"> и получите скидку 30%</span>
+      </h2>
     </v-layout>
     <v-layout justify-center class="layoutContainer">
       <ul>
@@ -65,7 +67,7 @@ import carousel from './modals/carousel'
         carousel: false,
         items: [
           {
-            name: 'Пальто оверсайз',
+            name: 'Пальто свободного кроя',
             title: 'с приспущенным рукавом',
             oldprice: 2790,
             price: 1953,

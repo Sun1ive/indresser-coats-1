@@ -2,7 +2,7 @@
   <v-container class="sixth" fluid>
     <v-layout column align-center class="layoutContainer py-5">
       <h2 class="white--text">Хватит мерзнуть!</h2>
-      <p class="white--text text-xs-center text-sm-left">Купите пальто оверсайз и уже завтра ловите улыбки мужчин</p>
+      <p class="white--text text-xs-center text-sm-left">Купите пальто свободного кроя и уже завтра ловите улыбки мужчин</p>
     </v-layout>
     <v-layout justify-center class="layoutContainer">
       <v-flex xs12 sm6 md4 class="box" v-for="(item, i) in items" :key="i">
@@ -41,7 +41,7 @@ import carousel from './modals/carousel'
         carousel: false,
         items: [
           {
-            name: 'Пальто оверсайз',
+            name: 'Пальто свободного кроя',
             title: 'с приспущенным рукавом',
             oldprice: 2790,
             price: 1953,

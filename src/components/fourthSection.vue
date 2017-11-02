@@ -2,7 +2,7 @@
   <v-container class="fourth" fluid>
     <v-layout column justify-center align-center class="layoutContainer pt-5">
       <h2 class="head">Подробности</h2>
-      <div class="text text-xs-center text-sm-left mt-2">о пальто оверсайз с приспущенным рукавом</div>
+      <div class="text text-xs-center text-sm-left mt-2">о пальто свободного кроя с приспущенным рукавом</div>
     </v-layout>
     <v-layout column align-center justify-center class="my-3">
       <div class="colors">Цвета</div>
