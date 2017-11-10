@@ -11,7 +11,7 @@
     </v-layout>
     <v-layout justify-center class="formContainer">
       <form class="form" @submit.prevent="submit">
-        <h3>Заполните форму:</h3>
+        <!-- <h3>Заполните форму:</h3> -->
         <v-select :items="sizes" v-model="userData.size" label="Выберите размер"></v-select>
         <v-text-field v-model="userData.name" name="name" label="Имя" required type="text"></v-text-field>
         <v-text-field v-model="userData.phone" name="phone" label="Телефон" required type="number"></v-text-field>

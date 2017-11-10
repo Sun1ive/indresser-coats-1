@@ -152,6 +152,12 @@ import carousel from './modals/carousel'
     min-height 2000px
 
 @media (max-width: 400px)
+  .third
+    ul
+      flex-direction column
+      li
+        margin 1rem 0
   .wrapper
     font-size .6rem
+
 </style>

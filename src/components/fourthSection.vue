@@ -184,4 +184,21 @@
     &:before
     &:after
       width 100px
+
+@media (max-width 400px)
+  .fourth
+    .comp
+      .percent
+        font-size 2rem
+      .name
+        font-size 1rem
+    ul
+      li
+        width 50px
+        height 50px
+  .colors
+  .composition
+    &:before
+    &:after
+      width 80px
 </style>

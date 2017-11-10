@@ -39,4 +39,8 @@
     transform translateY(5px)
   }
 }
+
+@media (max-width 430px)
+  .wrapper
+    bottom -5px
 </style>

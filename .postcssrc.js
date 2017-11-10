@@ -3,6 +3,6 @@ module.exports = {
     // to edit target browsers: use "browserslist" field in package.json
     "autoprefixer": {},
     "cssnano": {},
-    "postcss-cssnext": {}
+    "postcss-cssnext": {},
   }
 }
