@@ -20,7 +20,7 @@
 <style scoped lang="stylus">
 .carouselSlider
   min-height 500px
-  min-width 375px
+  min-width 450px
   .carousel
     height 85vh
 
