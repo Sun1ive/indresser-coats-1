@@ -10,21 +10,33 @@
       </v-flex>
     </v-layout>
     <v-layout justify-center class="formContainer">
+     <v-flex xs9>
       <form class="form" @submit.prevent="submit">
         <h3>Заполните форму:</h3>
         <v-text-field v-model="userData.name" label="Имя" required type="text"></v-text-field>
-        <v-text-field v-model="userData.phone" label="Телефон" required type="number"></v-text-field>
+        <v-text-field v-model="userData.phone" label="Телефон" required type="text"></v-text-field>
         <button class="buyButton">Заказать</button>
       </form>
+     </v-flex>
     </v-layout>
     <div class="close" @click="close"></div>
+
+    <v-dialog v-model="drawer" max-width="500">
+      <app-thanks @closeThanks="closeThanks"></app-thanks>
+    </v-dialog>
   </v-container>
 </template>
 
 <script>
+import thanks from './thanks'
+
 export default {
+  components: {
+    'app-thanks': thanks,
+  },
   data() {
     return {
+      drawer: false,
       items: [
         {
           name: 'При покупке пальто',
@@ -42,8 +54,13 @@ export default {
     close() {
       this.$emit('closeModal');
     },
+    closeThanks() {
+      this.drawer = false;
+    },
     submit() {
       this.userData.order = this.currentItem;
+      const validate = new RegExp('^[0-9]+$');
+      if (validate.test(this.userData.phone)) {
       Email.send(
         'coats@indresser.com',
         'info@indresser.com',
@@ -58,7 +75,12 @@ export default {
         name: '',
         phone: ''
       };
+      this.drawer = true;
       this.$emit('closeModal');
+      } else {
+        alert('Введите корректный номерт телефона');
+        this.userData.phone = '';
+      }
     }
   }
 };

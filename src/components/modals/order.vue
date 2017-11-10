@@ -10,22 +10,36 @@
       </v-flex>
     </v-layout>
     <v-layout justify-center class="formContainer">
-      <form class="form" @submit.prevent="submit">
+      <v-flex xs8>
+        <form class="form" @submit.prevent="submit">
         <v-select :items="sizes" v-model="userData.size" label="Выберите размер"></v-select>
         <v-text-field v-model="userData.name" label="Имя" required type="text"></v-text-field>
         <v-text-field v-model="userData.phone" label="Телефон" required type="text"></v-text-field>
         <button class="buyButton">Заказать</button>
       </form>
+      </v-flex>
     </v-layout>
     <div class="close" @click="close"></div>
+
+    <v-dialog v-model="drawer" max-width="500">
+      <app-thanks @closeThanks="closeThanks"></app-thanks>
+    </v-dialog>
   </v-container>
 </template>
 
 <script>
+import thanks from './thanks'
+
 export default {
-  props: ['currentItem'],
+  props: {
+    currentItem: Object,
+  },
+  components: {
+    'app-thanks': thanks,
+  },
   data() {
     return {
+      drawer: false,
       userData: {
         name: '',
         phone: '',
@@ -36,6 +50,9 @@ export default {
     };
   },
   methods: {
+    closeThanks() {
+      this.drawer = false;
+    },
     close() {
       this.$emit('closeModal');
     },
@@ -63,6 +80,8 @@ export default {
           size: '',
           order: {}
         };
+
+        this.drawer = true;
         this.$emit('closeModal');
       } else {
         alert('Введите корректный номер телефона');
@@ -74,5 +93,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../../stylus/order.styl';
+@import '../../stylus/order.styl'
+
 </style>
