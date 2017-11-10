@@ -22,29 +22,29 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        items: [
-          {
-            name: 'При покупке пальто',
-            title: 'получите скидку 30%',
-            img: '/public/img/p4.png',
-          },
-        ],
-        userData: {
-          name: '',
-          phone: ''
+export default {
+  data() {
+    return {
+      items: [
+        {
+          name: 'При покупке пальто',
+          title: 'получите скидку 30%',
+          img: '/public/img/p4.png'
         }
+      ],
+      userData: {
+        name: '',
+        phone: ''
       }
+    };
+  },
+  methods: {
+    close() {
+      this.$emit('closeModal');
     },
-    methods: {
-      close () {
-        this.$emit('closeModal')
-      },
-      submit () {
-        this.userData.order = this.currentItem
-        Email.send(
+    submit() {
+      this.userData.order = this.currentItem;
+      Email.send(
         'coats@indresser.com',
         'info@indresser.com',
         'Заказ на скидку с сайта coats.indresser.com',
@@ -52,21 +52,22 @@
         Телефон: ${this.userData.phone}`,
         'mail.adm.tools',
         'coats@indresser.com',
-        '3DLao3x1AC8t');
-        alert(`Спасибо ${this.userData.name} за Ваш заказ, скоро мы свяжемся с Вами.`)
-        this.userData = {
-          name: '',
-          phone: '',
-        }
-        this.$emit('closeModal')
-      } 
-    },
+        '3DLao3x1AC8t'
+      );
+      this.userData = {
+        name: '',
+        phone: ''
+      };
+      this.$emit('closeModal');
+    }
   }
+};
 </script>
 
 <style scoped lang="stylus">
-@import '../../stylus/order.styl'
+@import '../../stylus/order.styl';
 
-.order
-  min-height 400px
+.order {
+  min-height: 400px;
+}
 </style>

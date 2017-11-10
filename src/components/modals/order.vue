@@ -11,10 +11,9 @@
     </v-layout>
     <v-layout justify-center class="formContainer">
       <form class="form" @submit.prevent="submit">
-        <!-- <h3>Заполните форму:</h3> -->
         <v-select :items="sizes" v-model="userData.size" label="Выберите размер"></v-select>
-        <v-text-field v-model="userData.name" name="name" label="Имя" required type="text"></v-text-field>
-        <v-text-field v-model="userData.phone" name="phone" label="Телефон" required type="number"></v-text-field>
+        <v-text-field v-model="userData.name" label="Имя" required type="text"></v-text-field>
+        <v-text-field v-model="userData.phone" label="Телефон" required type="text"></v-text-field>
         <button class="buyButton">Заказать</button>
       </form>
     </v-layout>
@@ -23,50 +22,57 @@
 </template>
 
 <script>
-  export default {
-    props: ['currentItem'],
-    data () {
-      return {
-        userData: {
-          name: '',
-          phone: '',
-          size: '',
-          order: {}
-        },
-        sizes: ['XS','S','M','L']
-      }
-    },
-    methods: {
-      close () {
-        this.$emit('closeModal')
+export default {
+  props: ['currentItem'],
+  data() {
+    return {
+      userData: {
+        name: '',
+        phone: '',
+        size: '',
+        order: {}
       },
-      submit () {
-        this.userData.order = this.currentItem
+      sizes: ['XS', 'S', 'M', 'L']
+    };
+  },
+  methods: {
+    close() {
+      this.$emit('closeModal');
+    },
+    submit() {
+      this.userData.order = this.currentItem;
+      const validate = new RegExp('^[0-9]+$');
+
+      if (validate.test(this.userData.phone)) {
         Email.send(
-        `${this.userData.name}`,
-        'info@indresser.com',
-        'Заказ с сайта coats.indresser.com',
-        `Пользователь: ${this.userData.name}\n
-        заказал: ${this.userData.order.title}\n
-        Телефон: ${this.userData.phone}\n
-        Размер: ${this.userData.size}`,
-        'mail.adm.tools',
-        'coats@indresser.com',
-        '3DLao3x1AC8t');
-        alert(`Спасибо ${this.userData.name} за Ваш заказ, скоро мы свяжемся с Вами.`)
+          `coats@indresser.com`,
+          // 'info@indresser.com',
+          'sunliveua@gmail.com',
+          'Заказ с сайта coats.indresser.com',
+          `Пользователь: ${this.userData.name}\n
+          заказал: ${this.userData.order.title}\n
+          Телефон: ${this.userData.phone}\n
+          Размер: ${this.userData.size}`,
+          'mail.adm.tools',
+          'coats@indresser.com',
+          '3DLao3x1AC8t'
+        );
         this.userData = {
           name: '',
           phone: '',
           size: '',
-          order: {},
-        }
-        this.$emit('closeModal')
-      } 
+          order: {}
+        };
+        this.$emit('closeModal');
+      } else {
+        alert('Введите корректный номер телефона');
+        this.userData.phone = '';
+      }
     }
   }
+};
 </script>
 
 <style scoped lang="stylus">
-@import '../../stylus/order.styl'
-
+@import '../../stylus/order.styl';
 </style>
