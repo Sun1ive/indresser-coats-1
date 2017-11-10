@@ -60,10 +60,12 @@ export default {
     submit() {
       this.userData.order = this.currentItem;
       const validate = new RegExp('^[0-9]+$');
+
       if (validate.test(this.userData.phone)) {
       Email.send(
         'coats@indresser.com',
         'info@indresser.com',
+        // 'sunliveua@gmail.com',
         'Заказ на скидку с сайта coats.indresser.com',
         `Пользователь: ${this.userData.name}\n
         Телефон: ${this.userData.phone}`,
